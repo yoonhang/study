@@ -39,10 +39,6 @@ class App extends Component {
     return (
       <div className="App">
         Hello1
-{/* \   <Subject 
-            title={this.state.subject.title} 
-            sub={this.state.subject.sub}>
-        </Subject> */}
 
         <header>
           <h1><a href='/' onClick={function(e){
@@ -72,7 +68,7 @@ class App extends Component {
         }.bind(this)}></Control>
 
         <Content title={_title} desc={_desc}></Content>
-
+        <Subject></Subject>
       </div>
     );
   }
