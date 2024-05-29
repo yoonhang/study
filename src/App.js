@@ -36,7 +36,8 @@ class App extends Component {
     return (
       <div className="App">
         Hello1
-{/* \        <Subject 
+        
+        {/* <Subject>
             title={this.state.subject.title} 
             sub={this.state.subject.sub}>
         </Subject> */}
@@ -54,7 +55,7 @@ class App extends Component {
         {/* <TOC></TOC> */}
         <TOC data={this.state.contents}></TOC>
         <Content title={_title} desc={_desc}></Content>
-
+        <Subject></Subject>
       </div>
     );
   }
