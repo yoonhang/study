@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import Content from './components/Content';
 import TOC from './components/TOC';
 import Subject from './components/Subject';
+import Control from './components/Subject';
 import './App.css';
 
 
@@ -33,10 +34,12 @@ class App extends Component {
     _title = this.state.contents[0].title;
     _desc = this.state.contents[0].desc;
   }
+
+  console.log('render', this);
     return (
       <div className="App">
         Hello1
-{/* \        <Subject 
+{/* \   <Subject 
             title={this.state.subject.title} 
             sub={this.state.subject.sub}>
         </Subject> */}
@@ -44,15 +47,30 @@ class App extends Component {
         <header>
           <h1><a href='/' onClick={function(e){
             console.log(e);
-            debugger;
-            alert('hi');
-          }}>{this.state.subject.title}</a></h1>
+            e.preventDefault();
+            // debugger;
+            // alert('hi');
+
+            // this.state.mode = 'welcome';
+            this.setState({
+              mode:'welcome'
+            });
+
+          }.bind(this)}>{this.state.subject.title}</a></h1>
           {this.state.subject.sub}
         </header>
 
         Hello2
         {/* <TOC></TOC> */}
         <TOC data={this.state.contents}></TOC>
+        <Subject></Subject>
+        <Control onChangeMode={function(_mode){
+          this.setState({
+            mode:_mode
+          })
+        
+        }.bind(this)}></Control>
+
         <Content title={_title} desc={_desc}></Content>
 
       </div>
